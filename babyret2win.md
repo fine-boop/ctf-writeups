@@ -1,5 +1,6 @@
+# babyret2win
 
-This challenge was incredibly easy aswell I'm not even sure if its worth it to do a writeup, but here it is anyway.
+This challenge was incredibly easy a swell I'm not even sure if its worth it to do a writeup, but here it is anyway.
 
 Download binary from site:
 
