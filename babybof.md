@@ -1,5 +1,5 @@
 
-So this is a really easy introduction challenge, lets wget it and unzip it.
+So this is a really easy introduction to pwn challenge, lets wget it and unzip it.
 
 <pre lang="md">$ wget https://ctf.mcpt.ca/media/problem/mXcRUMoBm9VNveWdDtaUYE1jrkkKZyRjNzNvBUhoJrQ/babybof.zip && unzip babybof.zip </pre>
 
