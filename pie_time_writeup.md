@@ -1,20 +1,20 @@
 
 # PIE time writeup (picoGYM chall)
 
-So trying an easy binex chall from pico ctf to get started. Ill download it and do the basic checks before beginning the exploiting. The challenge includes the src but I wont download it to make it a bit more challenging.
+Ill download it and do the basic checks before beginning the exploiting. The challenge includes the src but I wont download it to make it a bit more challenging.
 
 <code style="white-space: nowrap; display: block; overflow-x: auto;">
 $ wget 'https://challenge-files.picoctf.net/c_rescued_float/d5c65372e63f3e149158631ad54b371427827b833b3f5f50aba3eaee5c6a98e5/vuln'
 </code>
 
-Lets run file: 
+Lets run that file: 
 
  ```
  $ file vuln
 vuln: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=0072413e1b5a0613219f45518ded05fc685b680a, for GNU/Linux 3.2.0, not stripped
  ```
 
-So this tells us that PIE is enabled - though I probably could've guessed from the name. Its dynamically linked so requires on files that aren't included in the executable to run properly. And its not stripped so it will be include plenty of information to debug and reverse.
+So this tells us that PIE is enabled - though I probably could've guessed from the name. Its dynamically linked so requires files that aren't included in the executable to run properly. And its not stripped so it will be include plenty of information to debug and reverse.
 
 
 Lets run it: 
