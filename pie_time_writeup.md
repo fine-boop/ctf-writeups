@@ -24,7 +24,7 @@ Address of main: 0x55c0b167b33d
 Enter the address to jump to, ex => 0x12345: 
 ```
 
-So it seems like an easy challenge. Leaks the address of main, and even gives us an input to jump to an address, so we don't even have to do a buffer overflow.
+So it leaks the address of main, and even gives us an input to jump to an address, so we don't even have to do a buffer overflow.
 All thats required to beat this is to find the PIE base by subtracting the leaked main address from the PIE protected main address we would find if we were to reverse the program. 
 
 Ill write a script to do that. 
