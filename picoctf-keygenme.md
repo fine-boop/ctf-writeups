@@ -97,7 +97,7 @@ This is the main function, and you can see that it calls `sub_12_09(s)` with the
 ![main](images/main_no_notes.png)
 Next lets check out that func
 
-![enc_func](imagee/enc_func_no_notes.png)
+![enc_func](images/enc_func_no_notes.png)
 
 There's quite a lot of code here and decompiled code isn't the easiest to understand, so I read through it and changed the variable names. 
 ![encfuncnotes](images/enc_func_notes.png)
