@@ -95,6 +95,8 @@ Anyway, there's also a partial flag there: `picoCTF{Hbr1ng_y0Hur_0wn_kH`, but is
 This is the main function, and you can see that it calls `sub_12_09(s)` with the users input as an arg. 
 
 ![main](images/main_no_notes.png)
+
+
 Next lets check out that func
 
 ![enc_func](images/enc_func_no_notes.png)
