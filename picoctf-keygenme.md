@@ -93,13 +93,13 @@ So there's quite a lot of useful info here. I can see it uses `libcrypto.so.1.1`
 Anyway, there's also a partial flag there: `picoCTF{Hbr1ng_y0Hur_0wn_kH`, but is incomplete so I'd assume the rest is going to be harder to find. I'll load it into ida to see what it looks like. 
 
 This is the main function, and you can see that it calls `sub_12_09(s)` with the users input as an arg. 
-![[ctf/writeups/images/main_no_notes.png]]
+![[images/main_no_notes.png]]
 Next lets check out that func
 
-![[ctf/writeups/images/enc_func_no_notes.png]]
+![[images/enc_func_no_notes.png]]
 
 There's quite a lot of code here and decompiled code isn't the easiest to understand, so I read through it and changed the variable names. 
-![[ctf/writeups/images/enc_func_notes.png]]
+![[images/enc_func_notes.png]]
 
 You don't actually need to understand too much of this unless you want to reverse the encryption process. Notice how on line 57, each character of the users input is compared to a character of an array, and if the users input isn't equal to that of the array, it returns 0 and main will reject the input. At this stage in execution, the flag is being stored in unencrypted format somewhere in memory, and I can find it with gdb. 
 
