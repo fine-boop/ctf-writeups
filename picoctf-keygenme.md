@@ -93,13 +93,14 @@ So there's quite a lot of useful info here. I can see it uses `libcrypto.so.1.1`
 Anyway, there's also a partial flag there: `picoCTF{Hbr1ng_y0Hur_0wn_kH`, but is incomplete so I'd assume the rest is going to be harder to find. I'll load it into ida to see what it looks like. 
 
 This is the main function, and you can see that it calls `sub_12_09(s)` with the users input as an arg. 
-![[images/main_no_notes.png]]
+
+![main](images/main_no_notes.png)
 Next lets check out that func
 
-![[images/enc_func_no_notes.png]]
+![enc_func](imagee/enc_func_no_notes.png)
 
 There's quite a lot of code here and decompiled code isn't the easiest to understand, so I read through it and changed the variable names. 
-![[images/enc_func_notes.png]]
+![encfuncnotes](images/enc_func_notes.png)
 
 You don't actually need to understand too much of this unless you want to reverse the encryption process. Notice how on line 57, each character of the users input is compared to a character of an array, and if the users input isn't equal to that of the array, it returns 0 and main will reject the input. At this stage in execution, the flag is being stored in unencrypted format somewhere in memory, and I can find it with gdb. 
 
@@ -107,7 +108,7 @@ Now don't have much experience with either ida or gdb, so I spend a while trying
 
 What I ended up doing was right clicking that line in ida, and selecting the `copy to assembley` option, which brought me here: 
 
-![[asm.png]]
+![asm](images/asm.png)
 
 What I did was grabbed the address `0x000055555555540a` and used it in gdb to add a breakpoint, then print 64 strings (messy but whatever) starting at rsp. This works because when we break at that instruction, the flag has been decrypted and is just sitting in memory. 
 
